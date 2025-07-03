@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Noor Al-Mohammed | Portfolio</title>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #fff0f6;
+    color: #6b2952;
+  }
+
+  /* --- Fixed Navbar --- */
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #ff66b2;
+    color: white;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem 0;
+    z-index: 1000;
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
+  nav a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  nav a:hover {
+    color: #fff7fb;
+  }
+
+  /* --- Page Container --- */
+  .container {
+    max-width: 1100px;
+    margin: 7rem auto 3rem;
+    padding: 0 1rem;
+  }
+
+  /* --- Centered Image with filter & rounded edges --- */
+  .profile-pic-container {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .profile-pic {
+    width: 200px;
+    border-radius: 20px;
+    filter: brightness(0.95) saturate(1.2) drop-shadow(0 0 5px #ff66b2);
+    transition: filter 0.3s ease;
+  }
+  .profile-pic:hover {
+    filter: brightness(1.1) saturate(1.4) drop-shadow(0 0 10px #ff3399);
+  }
+
+  /* --- Table styling --- */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 3rem;
+  }
+  th, td {
+    border: 2px solid #ff66b2;
+    padding: 12px 15px;
+    text-align: center;
+  }
+  thead tr {
+    background-color: #ffb3d9;
+    color: #6b2952;
+    font-weight: bold;
+  }
+
+  /* --- Text over image --- */
+  .text-over-img {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  .text-over-img img {
+    width: 100%;
+    filter: brightness(0.6);
+    display: block;
+  }
+  .text-over-img .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-shadow: 1px 1px 6px #ff3399cc;
+  }
+
+  /* --- Two column layout --- */
+  .two-columns {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+  }
+  .column {
+    flex: 1 1 45%;
+    background-color: #ffe6f2;
+    padding: 1.5rem;
+    color: #a63672;
+    height: 300px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px #ffb3d9aa;
+  }
+
+  /* --- Hover effect on p --- */
+  p:hover {
+    color: #ff3399;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+
+  /* --- Image overlay fade --- */
+  .overlay-container {
+    position: relative;
+    width: 300px;
+    margin: 0 auto 3rem;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px #ff66b2aa;
+  }
+  .overlay-container img {
+    width: 100%;
+    display: block;
+    transition: opacity 0.5s ease;
+  }
+  .overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(255, 102, 178, 0.7);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+    font-weight: 700;
+    border-radius: 15px;
+  }
+  .overlay-container:hover .overlay {
+    opacity: 1;
+  }
+
+  /* --- Video section with text overlay --- */
+  .video-overlay-container {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px #ff66b2cc;
+  }
+  .video-overlay-container video {
+    width: 100%;
+    display: block;
+    border-radius: 20px;
+  }
+  .video-overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 8px #ff3399cc;
+    pointer-events: none;
+  }
+
+  /* --- Footer --- */
+  footer {
+    background-color: #ff66b2;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 3rem;
+  }
+
+  /* Responsive tweaks */
+  @media (max-width: 768px) {
+    .two-columns {
+      flex-direction: column;
+    }
+    .column {
+      height: auto;
+      flex: 1 1 100%;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#howto">How To</a>
+  </nav>
+
+  <div class="container" id="home">
+    <!-- Centered image with filter and rounded edges -->
+    <div class="profile-pic-container">
+      <img
+        src="https://i.pravatar.cc/300?img=5"
+        alt="Noor Al-Mohammed"
+        class="profile-pic"
+      />
+    </div>
+
+    <!-- Text over image -->
+    <div class="text-over-img">
+      <img
+        src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80"
+        alt="Creative Background"
+      />
+      <div class="text">Innovative Web Developer</div>
+    </div>
+
+    <!-- Table -->
+    <table>
+      <thead>
+        <tr>
+          <th>Skill</th>
+          <th>Level</th>
+          <th>Experience</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>HTML &amp; CSS</td>
+          <td>Advanced</td>
+          <td>New</td>
+        </tr>
+        <tr>
+          <td>JavaScript</td>
+          <td>Not Good</td>
+          <td>None</td>
+        </tr>
+        <tr>
+          <td>Bootstrap</td>
+          <td>Very good</td>
+          <td>New</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Two column layout -->
+    <div class="two-columns" id="about">
+      <div class="column">
+        <h3>About Noor</h3>
+        <p>
+          I'm a passionate web developer practicing crafting
+          visually good websites.
+        </p>
+      </div>
+      <div class="column">
+        <h3>Contact Info</h3>
+        <p>Email: Noor.AlMohammed@my-aolcc.com</p>
+      </div>
+    </div>
+
+    <!-- Hover effect paragraph -->
+    <p>Hover over this text to see the color change effect!</p>
+
+    <!-- Image overlay fade -->
+    <div class="overlay-container">
+      <img
+        src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=600&q=80"
+        alt="Overlay Example"
+      />
+      <div class="overlay">Creative Overlay</div>
+    </div>
+
+    <!-- Video with text overlay -->
+    <div class="video-overlay-container" id="howto">
+      <video autoplay muted loop playsinline>
+        <source src="https://cdn.pixabay.com/video/2016/08/22/4733-179738669_tiny.mp4"
+          type="video/mp4" />
+        Sorry, your browser does not support the video tag.
+      </video>
+      <div class="video-overlay-text">Inspiring Motion</div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Noor Al-Mohammed. All Rights Reserved.
+  </footer>
+
+</body>
+</html>
